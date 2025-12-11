@@ -1,16 +1,20 @@
-# magicslide_app
+# MagicSlides App – Assignment
 
-A new Flutter project.
+A Flutter application that allows users to sign up, log in, switch themes, preview PDFs, and (once accessId is provided) generate AI-powered presentations using the MagicSlides API.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 How to Run the App
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1. Clone the repository
+```sh
+git clone https://github.com/vsahu0621/magicslide_app
+cd magicslide_app
+2. Install dependencies
+flutter pub get
+3. Set up Supabase
+lib/config/supabase_config.dart
+4. Run the app in debug mode
+flutter run
+5. Build release APK
+flutter build apk --release
