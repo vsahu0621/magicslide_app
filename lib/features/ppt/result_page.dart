@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:magicslide_app/features/home/pdf_preview_page.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_filex/open_filex.dart';
 
@@ -59,12 +60,32 @@ class _ResultPageState extends State<ResultPage> {
 
             const SizedBox(height: 30),
 
+            // DOWNLOAD BUTTON
             ElevatedButton.icon(
               onPressed: downloading ? null : downloadFile,
               icon: downloading
                   ? const CircularProgressIndicator()
                   : const Icon(Icons.download),
               label: Text(downloading ? "Downloading..." : "Download PPT"),
+            ),
+
+            const SizedBox(height: 20),
+
+            // PDF PREVIEW BUTTON
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const PDFPreviewPage(
+                      pdfUrl:
+                          "https://www.africau.edu/images/default/sample.pdf",
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.picture_as_pdf),
+              label: const Text("Preview PDF"),
             ),
           ],
         ),
